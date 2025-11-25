@@ -16,7 +16,7 @@ def hash_password(plaintext):
     return hashlib.sha256(plaintext.encode()).hexdigest()
 
 def run_dictionary_attack(target):
-    print(f"[*] Starting Dictionary Attack on: {target} (sha256)")
+    print(f"Starting Dictionary Attack on: {target} (sha256)")
     start_time = time.time()
     
     wordlist = get_wordlist()
@@ -27,8 +27,8 @@ def run_dictionary_attack(target):
         
         if computed_hash == target:
             end_time = time.time()
-            print(f"\n[+] PASSWORD FOUND: {word}")
-            print(f"[*] Time elapsed: {end_time - start_time:.4f} seconds")
+            print(f"\nPASSWORD FOUND: {word}")
+            print(f"Time elapsed: {end_time - start_time:.4f} seconds")
             return word
             
     print(f"\n[-] Password not found in wordlist.")
