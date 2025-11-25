@@ -13,7 +13,7 @@ def get_wordlist():
         print("[-] File not found.")
 
 def hash_password(plaintext):
-    return hashlib.sha256(plaintext.encode('utf-8')).hexdigest()
+    return hashlib.sha256(plaintext.encode()).hexdigest()
 
 def run_dictionary_attack(target):
     print(f"[*] Starting Dictionary Attack on: {target} (sha256)")
